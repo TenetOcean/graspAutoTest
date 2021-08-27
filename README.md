@@ -1,4 +1,4 @@
-# pyautoTest Web UI 自动化项目
+# graspAutoTest Web UI 自动化项目
 
 ### 特点
 
@@ -39,19 +39,14 @@ class RunConfig:
 
 ### 运行
 
-**不支持在编辑器（pycharm/ VS code ...）中运行，请在 cmd（windows）/终端(Linux)下执行。**
-
-```shell
-$ python run_tests.py  (回归模式，生成HTML报告)
-$ python run_tests.py -m debug  (调试模式)
-```
+支持在编辑器（pycharm/ VS code ...）中运行,或者cmd（windows）/终端（linux）下执行。
 
 ### 警告提示
 
-`conftest.py` 文件有一行在 pycharm 中提示错误：
+`conftest.py` 文件有一行在 pycharm，VS code 中提示错误：
 
 ```python
-from py.xml import html
+from py.xml import html（源代码中已经替换为 from py._xmlgen import html）
 ```
 
 * 原因
