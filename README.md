@@ -7,6 +7,16 @@
 * 测试用例运行失败可以重跑。
 * 测试数据参数化。
 
+### 框架
+
+pytest + selenium + poium + python
+
+```文件解析
+page--元素定位封装
+test_dir--测试用例
+test_report--测试报告及错误截图
+```
+
 ### 安装
 
 ```shell
