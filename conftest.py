@@ -1,6 +1,7 @@
 import os
 import pytest
-from py.xml import html
+from datetime import datetime
+from py._xmlgen import html
 from selenium import webdriver
 from selenium.webdriver import Remote
 from selenium.webdriver.chrome.options import Options as CH_Options
@@ -11,20 +12,31 @@ from config import RunConfig
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 REPORT_DIR = BASE_DIR + "/test_report/"
 
+# 修改html报告的Environment
+
+
+def pytest_configure(config):
+    # 添加项目名称
+    config._metadata["项目名称"] = "任我行订货平台UI自动化"
 
 # 设置用例描述表头
-def pytest_html_results_table_header(cells):
-    cells.insert(2, html.th('Description'))
-    cells.pop()
 
+
+def pytest_html_results_table_header(cells):
+    cells.insert(1, html.th('Description'))
+    cells.insert(2, html.th('Time', class_='sortable time', col='time'))
+    cells.pop()
 
 # 设置用例描述表格
+
+
 def pytest_html_results_table_row(report, cells):
-    cells.insert(2, html.td(report.description))
+    cells.insert(1, html.td(report.description))
+    cells.insert(2, html.td(datetime.now(), class_='col-time'))
     cells.pop()
 
 
-@pytest.mark.hookwrapper
+@pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     """
     用于向测试用例中添加用例的开始时间、内部注释，和失败截图等.
@@ -33,7 +45,7 @@ def pytest_runtest_makereport(item):
     pytest_html = item.config.pluginmanager.getplugin('html')
     outcome = yield
     report = outcome.get_result()
-    report.description = description_html(item.function.__doc__)
+    report.description = str(item.function.__doc__)
     extra = getattr(report, 'extra', [])
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
@@ -50,32 +62,6 @@ def pytest_runtest_makereport(item):
                        'onclick="window.open(this.src)" align="right"/></div>' % img_path
                 extra.append(pytest_html.extras.html(html))
         report.extra = extra
-
-
-def description_html(desc):
-    """
-    将用例中的描述转成HTML对象
-    :param desc: 描述
-    :return:
-    """
-    if desc is None:
-        return "No case description"
-    desc_ = ""
-    for i in range(len(desc)):
-        if i == 0:
-            pass
-        elif desc[i] == '\n':
-            desc_ = desc_ + ";"
-        else:
-            desc_ = desc_ + desc[i]
-    
-    desc_lines = desc_.split(";")
-    desc_html = html.html(
-        html.head(
-            html.meta(name="Content-Type", value="text/html; charset=latin1")),
-        html.body(
-            [html.p(line) for line in desc_lines]))
-    return desc_html
 
 
 def capture_screenshots(case_name):
@@ -130,7 +116,7 @@ def browser():
         # 通过远程节点运行
         driver = Remote(command_executor='http://localhost:4444/wd/hub',
                         desired_capabilities={
-                              "browserName": "chrome",
+                            "browserName": "chrome",
                         })
         driver.set_window_size(1920, 1080)
 
@@ -151,4 +137,4 @@ def browser_close():
 
 
 if __name__ == "__main__":
-    capture_screenshots("test_dir/test_baidu_search.test_search_python.png")
+    capture_screenshots("test_dir/test_login.png")

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="29.803" timestamp="2021-08-27T15:42:41.019994" hostname="DESKTOP-R3PTHH9"><testcase classname="test_dir.test_login.TestLogin" name="test_login_sucess" time="11.977"><failure message="selenium.common.exceptions.NoSuchElementException: Message: ❌ Find 0 elements through: xpath=/html/body/div/div[2]/div/div/div/div[2]/div">self = &lt;test_dir.test_login.TestLogin object at 0x0000019B16963C10&gt;
+browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="aa58715f527a830e892d964c13837e67")&gt;
+base_url = 'http://192.168.9.50:8100'
+
+    def test_login_sucess(self, browser, base_url):
+        '''登录测试'''
+        page = PayWebPage(browser)
+        page.get(base_url)
+&gt;       page.first_agent_login_button.click()
+
+test_dir\test_login.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:233: in click
+    elem = self.__get_element(self.k, self.v)
+C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:155: in __get_element
+    self.__find_element((By.XPATH, value))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;poium.page_objects.Element object at 0x0000019B1604B130&gt;
+elem = ('xpath', '/html/body/div/div[2]/div/div/div/div[2]/div')
+
+    def __find_element(self, elem):
+        """
+        Find if the element exists.
+        """
+        for i in range(self.timeout):
+            try:
+                elems = self.__elements(elem[0], elem[1])
+            except FunctionTimedOut:
+                elems = []
+    
+            if len(elems) == 1:
+                logging.info("✅ Find element: {by}={value} ".format(
+                    by=elem[0], value=elem[1]))
+                break
+            elif len(elems) &gt; 1:
+                logging.info("❓ Find {n} elements through: {by}={value}".format(
+                    n=len(elems), by=elem[0], value=elem[1]))
+                break
+            else:
+                sleep(1)
+        else:
+            error_msg = "❌ Find 0 elements through: {by}={value}".format(by=elem[0], value=elem[1])
+            logging.error(error_msg)
+&gt;           raise NoSuchElementException(error_msg)
+E           selenium.common.exceptions.NoSuchElementException: Message: ❌ Find 0 elements through: xpath=/html/body/div/div[2]/div/div/div/div[2]/div
+
+C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:128: NoSuchElementException</failure></testcase></testsuite></testsuites>
