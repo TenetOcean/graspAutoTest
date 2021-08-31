@@ -4,11 +4,10 @@ from os.path import dirname, abspath
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 from page.pay_web_page import PayWebPage
 
-
-def hh_login(browser,base_url):
+def hh_login(driver,url):
     '''辉煌登录'''
-    page = PayWebPage(browser)
-    page.get(base_url)
+    page = PayWebPage(driver)
+    page.get(url)
     loginHandle = page.current_window_handle
     page.first_agent_login_button.click()
     page.login_user_name_input.send_keys("02899999")

@@ -429,9 +429,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 27-Aug-2021 at 12:46:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 27-Aug-2021 at 21:06:03 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
+      <tr>
+        <td>Base URL</td>
+        <td><a href="http://192.168.9.50:8100" target="_blank">http://192.168.9.50:8100</a></td></tr>
       <tr>
         <td>JAVA_HOME</td>
         <td>C:\Program Files\Java\jdk-16.0.1</td></tr>
@@ -443,7 +446,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Windows-10-10.0.19041-SP0</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"html": "3.1.1", "metadata": "1.11.0", "rerunfailures": "10.1"}</td></tr>
+        <td>{"base-url": "1.4.2", "html": "3.1.1", "metadata": "1.11.0", "rerunfailures": "10.1"}</td></tr>
       <tr>
         <td>Python</td>
         <td>3.8.0</td></tr>
@@ -451,8 +454,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>项目名称</td>
         <td>任我行订货平台UI自动化</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 8.04 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">1 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="rerun">1 rerun</span>
+    <p>1 tests ran in 11.97 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="rerun">0 rerun</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -464,25 +467,31 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="5">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="error results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Error</td>
+          <td class="col-result">Passed</td>
           <td>登录测试</td>
-          <td class="col-time">2021-08-27 12:46:02.688343</td>
-          <td class="col-name">test_dir/test_login.py::TestLogin::test_login_sucess::setup</td>
-          <td class="col-duration">3.69</td></tr>
+          <td class="col-time">2021-08-27 21:06:03.924152</td>
+          <td class="col-name">test_dir/test_login.py::TestLogin::test_login_sucess</td>
+          <td class="col-duration">11.73</td></tr>
         <tr>
           <td class="extra" colspan="5">
-            <div><div><img src="image/test_login.py_TestLogin_test_login_sucess.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="rerun results-table-row">
-        <tr>
-          <td class="col-result">Rerun</td>
-          <td>登录测试</td>
-          <td class="col-time">2021-08-27 12:46:02.688343</td>
-          <td class="col-name">test_dir/test_login.py::TestLogin::test_login_sucess::setup</td>
-          <td class="col-duration">1.55</td></tr>
-        <tr>
-          <td class="extra" colspan="5">
-            <div><div><img src="image/test_login.py_TestLogin_test_login_sucess.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>2021-08-27 21:05:54,159 INFO ✅ Find element: xpath=/html/body/div/div[2]/div/div/div/div[1]/div 
+2021-08-27 21:05:55,144 INFO 🖱 click element: 一级代理登录
+2021-08-27 21:05:55,205 INFO ✅ Find element: css selector=#UserName 
+2021-08-27 21:05:56,180 INFO 🖋 input element: 登录用户名输入框
+2021-08-27 21:05:56,245 INFO ✅ Find element: css selector=#PassWord 
+2021-08-27 21:05:57,222 INFO 🖋 input element: 登录密码输入框
+2021-08-27 21:05:57,292 INFO ✅ Find element: css selector=#UserCode 
+2021-08-27 21:05:58,275 INFO 🖋 input element: 登录验证码输入框
+2021-08-27 21:05:58,398 INFO ✅ Find element: css selector=#LoginForm &gt; button 
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     poium:logging.py:18 INFO ✅ Find element: xpath=/html/body/div/div[2]/div/div/div/div[1]/div 
+INFO     poium:logging.py:18 INFO 🖱 click element: 一级代理登录
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#UserName 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录用户名输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#PassWord 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录密码输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#UserCode 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录验证码输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#LoginForm &gt; button <br/> ----------------------------Captured stdout teardown---------------------------- <br/>test end!
+<br/></div></td></tr></tbody></table></body></html>

@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 27-Aug-2021 at 15:43:10 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 31-Aug-2021 at 17:33:37 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -454,8 +454,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>项目名称</td>
         <td>任我行订货平台UI自动化</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 29.81 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="rerun">0 rerun</span>
+    <p>1 tests ran in 13.76 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="rerun">0 rerun</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -467,16 +467,40 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="5">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td>登录测试</td>
-          <td class="col-time">2021-08-27 15:43:10.829303</td>
-          <td class="col-name">test_dir/test_login.py::TestLogin::test_login_sucess</td>
-          <td class="col-duration">11.97</td></tr>
+          <td class="col-result">Passed</td>
+          <td>
+            <html>
+              <head>
+                <meta name="Content-Type" value="text/html; charset=latin1"/></head>
+              <body>
+                <p>录测试</p></body></html></td>
+          <td class="col-time">2021-08-31 17:33:37.653962</td>
+          <td class="col-name">test_dir/test_login.py::TestLoginSucess::test_login_sucess</td>
+          <td class="col-duration">13.51</td></tr>
         <tr>
           <td class="extra" colspan="5">
-            <div><div><img src="image/test_login.py_TestLogin_test_login_sucess.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;test_dir.test_login.TestLogin object at 0x0000019B16963C10&gt;<br/>browser = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;aa58715f527a830e892d964c13837e67&quot;)&gt;<br/>base_url = &#x27;http://192.168.9.50:8100&#x27;<br/><br/>    def test_login_sucess(self, browser, base_url):<br/>        &#x27;&#x27;&#x27;登录测试&#x27;&#x27;&#x27;<br/>        page = PayWebPage(browser)<br/>        page.get(base_url)<br/>&gt;       page.first_agent_login_button.click()<br/><br/>test_dir\test_login.py:16: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:233: in click<br/>    elem = self.__get_element(self.k, self.v)<br/>C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:155: in __get_element<br/>    self.__find_element((By.XPATH, value))<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;poium.page_objects.Element object at 0x0000019B1604B130&gt;<br/>elem = (&#x27;xpath&#x27;, &#x27;/html/body/div/div[2]/div/div/div/div[2]/div&#x27;)<br/><br/>    def __find_element(self, elem):<br/>        &quot;&quot;&quot;<br/>        Find if the element exists.<br/>        &quot;&quot;&quot;<br/>        for i in range(self.timeout):<br/>            try:<br/>                elems = self.__elements(elem[0], elem[1])<br/>            except FunctionTimedOut:<br/>                elems = []<br/>    <br/>            if len(elems) == 1:<br/>                logging.info(&quot;✅ Find element: {by}={value} &quot;.format(<br/>                    by=elem[0], value=elem[1]))<br/>                break<br/>            elif len(elems) &gt; 1:<br/>                logging.info(&quot;❓ Find {n} elements through: {by}={value}&quot;.format(<br/>                    n=len(elems), by=elem[0], value=elem[1]))<br/>                break<br/>            else:<br/>                sleep(1)<br/>        else:<br/>            error_msg = &quot;❌ Find 0 elements through: {by}={value}&quot;.format(by=elem[0], value=elem[1])<br/>            logging.error(error_msg)<br/>&gt;           raise NoSuchElementException(error_msg)<br/><span class="error">E           selenium.common.exceptions.NoSuchElementException: Message: ❌ Find 0 elements through: xpath=/html/body/div/div[2]/div/div/div/div[2]/div</span><br/><br/>C:\Users\rwxwin10\AppData\Local\Programs\Python\Python38\lib\site-packages\poium\page_objects.py:128: NoSuchElementException<br/> ------------------------------Captured stdout call------------------------------ <br/>2021-08-27 15:42:50,870 ERROR ❌ Find 0 elements through: xpath=/html/body/div/div[2]/div/div/div/div[2]/div
-<br/> -------------------------------Captured log call-------------------------------- <br/>ERROR    poium:logging.py:22 ERROR ❌ Find 0 elements through: xpath=/html/body/div/div[2]/div/div/div/div[2]/div<br/> ----------------------------Captured stdout teardown---------------------------- <br/>test end!
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>2021-08-31 17:33:26,511 INFO ✅ Find element: xpath=/html/body/div/div[2]/div/div/div/div[1]/div 
+2021-08-31 17:33:27,552 INFO 🖱 click element: 一级代理登录
+2021-08-31 17:33:27,719 INFO ✅ Find element: css selector=#UserName 
+2021-08-31 17:33:28,903 INFO 🖋 input element: 登录用户名输入框
+2021-08-31 17:33:29,095 INFO ✅ Find element: css selector=#PassWord 
+2021-08-31 17:33:30,111 INFO 🖋 input element: 登录密码输入框
+2021-08-31 17:33:30,173 INFO ✅ Find element: css selector=#UserCode 
+2021-08-31 17:33:31,155 INFO 🖋 input element: 登录验证码输入框
+2021-08-31 17:33:31,224 INFO ✅ Find element: css selector=#LoginForm &gt; button 
+2021-08-31 17:33:34,311 INFO ✅ Find element: xpath=//*[@id=&#x27;page-wrapper&#x27;]/div[3]/div[2]/div[5]/div/div/div[2]/div/a[1] 
+2021-08-31 17:33:35,305 INFO 🖱 click element: 通用系列产品购买按钮
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     poium:logging.py:18 INFO ✅ Find element: xpath=/html/body/div/div[2]/div/div/div/div[1]/div 
+INFO     poium:logging.py:18 INFO 🖱 click element: 一级代理登录
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#UserName 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录用户名输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#PassWord 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录密码输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#UserCode 
+INFO     poium:logging.py:18 INFO 🖋 input element: 登录验证码输入框
+INFO     poium:logging.py:18 INFO ✅ Find element: css selector=#LoginForm &gt; button 
+INFO     poium:logging.py:18 INFO ✅ Find element: xpath=//*[@id=&#x27;page-wrapper&#x27;]/div[3]/div[2]/div[5]/div/div/div[2]/div/a[1] 
+INFO     poium:logging.py:18 INFO 🖱 click element: 通用系列产品购买按钮<br/> ----------------------------Captured stdout teardown---------------------------- <br/>test end!
 <br/></div></td></tr></tbody></table></body></html>
