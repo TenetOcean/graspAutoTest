@@ -4,9 +4,9 @@ from poium import Page, Element
 class DogOnlinePage(Page):
     """软狗在线销售系统页面元素"""
 
-    product_buy_menu = Element(css="#\\31 01", describe="产品购买模块")
+    product_buy_menu = Element(css="#\\31 01", describe="产品购买菜单")
     soft_dog_buy_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
-                                   describe="软狗产品购买子模块")
+                                   describe="软狗产品购买子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     hh_top_soft_icon = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[6]/" + 
                                "form/div[1]/div[1]/a",describe="辉煌ⅡTOP软件选择图标")
