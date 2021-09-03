@@ -16,18 +16,18 @@ class DogOnlinePage(Page):
     dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(5)>ul>li>a",describe="加密狗查询子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     yhh_erp_soft_nav = Element(css="#pills > ul > li:nth-child(5)",describe="管家婆云辉煌ERP软件导航")
-    hh_top_soft_icon = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[6]/" + 
-                               "form/div[1]/div[1]/a",describe="辉煌ⅡTOP软件选择图标")
+    hh_top_soft_icon = Element(css="#pills-tab11101 >form > div.row > div:nth-child(1) > a",
+                               describe="辉煌ⅡTOP软件选择图标")
     yhh_erp_h3_icon = Element(css="#pills-tab11504 > form > div.row > div:nth-child(2) > a",
                               describe="云辉煌ERP H3买断选择图标")
-    hh_top_new_buy_radio = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[6]/" + 
-                                   "form/div[2]/div[3]/div/div/label[1]/input",describe="辉煌ⅡTOP单选按钮'新购'")
-    yhh_erp_h3_new_buy_radio = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[7]"+
-                                       "/form/div[2]/div[3]/div/div/label[1]/input",describe="云辉煌ERP H3买断单选按钮'新购'")
-    hh_top_buy_order_submit = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/" +
-                                      "div[6]/form/div[2]/div[14]/div/button[1]",describe="辉煌ⅡTOP提交订单")
-    yhh_erp_h3_buy_order_submit = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/" +
-                                          "div[7]/form/div[2]/div[14]/div/button[1]",describe="云辉煌ERP H3买断提交订单")
+    hh_top_new_buy_radio = Element(css="#pills-tab11101 > form > div.top-line > div:nth-child(3) > div > div >" +
+                                   "label:nth-child(1) > input",describe="辉煌ⅡTOP单选按钮'新购'")
+    yhh_erp_h3_new_buy_radio = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(3) > div > div >" +
+                                       "label:nth-child(1) > input",describe="云辉煌ERP H3买断单选按钮'新购'")
+    hh_top_buy_order_submit = Element(css="#pills-tab11101 > form > div.top-line > div:nth-child(14) > div >" +
+                                      "button.btn.btn-success",describe="辉煌ⅡTOP提交订单")
+    yhh_erp_h3_buy_order_submit = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(14) > div >" +
+                                          "button.btn.btn-success",describe="云辉煌ERP H3买断提交订单")
     buy_sucess_dog_number_copy_button = Element(xpath="//*[@id='modalId']/div[1]/div/div[2]/div/div[3]/div/input[1]",
                                                 describe="购买成功狗号验证码复制按钮")
     
