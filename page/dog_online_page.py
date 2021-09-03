@@ -72,6 +72,7 @@ class DogOnlinePage(Page):
     search_button = Element(css=".col-md-5 > button",describe="搜索按钮")
     submit_headquarters_review_button = Element(css=".btn-success",describe="提交总部审核按钮")
     agent_review_pass_button = Element(css="#Through",describe="代理审核通过按钮")
+    agent_review_dissmiss_button = Element(css="#NotThrough",describe="代理审核不通过按钮")
 
     customer_name_input = Element(css="#CustomerName",describe="客户名称输入框")
     customer_telephone_input = Element(css="#CustomerTel",describe="客户电话输入框")
