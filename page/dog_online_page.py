@@ -6,10 +6,14 @@ class DogOnlinePage(Page):
 
     product_buy_menu = Element(css="#\\31 01", describe="产品购买菜单")
     product_update_menu = Element(css="#\\32 01",describe="产品升级菜单")
+    dog_manage_menu = Element(css="#\\33 21",describe="加密狗管理菜单")
     soft_dog_buy_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                    describe="软狗产品购买子菜单")
     product_update_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                      describe="产品升级子菜单")
+    wait_update_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(2)",
+                                  describe="升级中客户子菜单")
+    dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(5)>ul>li>a",describe="加密狗查询子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     yhh_erp_soft_nav = Element(css="#pills > ul > li:nth-child(5)",describe="管家婆云辉煌ERP软件导航")
     hh_top_soft_icon = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[6]/" + 
@@ -18,8 +22,8 @@ class DogOnlinePage(Page):
                               describe="云辉煌ERP H3买断选择图标")
     hh_top_new_buy_radio = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[6]/" + 
                                    "form/div[2]/div[3]/div/div/label[1]/input",describe="辉煌ⅡTOP单选按钮'新购'")
-    yhh_erp_h3_new_buy_radio = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(3) > div > div >" +
-                                       "label:nth-child(1) > input ",describe="云辉煌ERP H3买断单选按钮'新购'")
+    yhh_erp_h3_new_buy_radio = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div[7]"+
+                                       "/form/div[2]/div[3]/div/div/label[1]/input",describe="云辉煌ERP H3买断单选按钮'新购'")
     hh_top_buy_order_submit = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/" +
                                       "div[6]/form/div[2]/div[14]/div/button[1]",describe="辉煌ⅡTOP提交订单")
     yhh_erp_h3_buy_order_submit = Element(xpath="/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/" +
@@ -61,7 +65,13 @@ class DogOnlinePage(Page):
     update_computer_count_radio = Element(xpath="//*[@id='dch']/div[6]/div/div/label[5]/input",
                                           describe="升级电脑数量单选按钮‘50台以上’")
     update_review_submit_button = Element(css="#ConfirmInfo",describe="升级审核提交按钮")
+    wait_update_pay_button = Element(css="#sample_1 > tbody > tr:nth-child(1) > td:nth-child(12) >" + 
+                                     "button.btn.btn-success",describe="升级中客户付款按钮")
 
+    search_input = Element(css=".form-control",describe="搜索输入框")
+    search_button = Element(css=".col-md-5 > button",describe="搜索按钮")
+    submit_headquarters_review_button = Element(css=".btn-success",describe="提交总部审核按钮")
+    agent_review_pass_button = Element(css="#Through",describe="代理审核通过按钮")
 
     customer_name_input = Element(css="#CustomerName",describe="客户名称输入框")
     customer_telephone_input = Element(css="#CustomerTel",describe="客户电话输入框")
