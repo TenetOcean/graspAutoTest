@@ -52,7 +52,7 @@ class TestLoginSucess:
         time.sleep(1)
 
     def test_buy_success(self,browser,base_url):
-        ''''''
+        '''随测'''
         self.hh_login(browser,base_url)
         page = DogOnlinePage(browser)
         page.get("http://192.168.9.50:8200/Home/Index")
