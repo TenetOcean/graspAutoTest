@@ -81,9 +81,46 @@ class TestUpdate:
 
     def test_update_user_conunt_for_yhh(self,browser):
         """未注册云辉煌ERP H3买断升级用户数"""
-        pass
-        # dPage = DogOnlinePage(browser)
-        # dPage.get
+        dPage = DogOnlinePage(browser)
+        dPage.get("http://192.168.9.50:8200/")
+        dPage.product_buy_menu.click()
+        dPage.soft_dog_buy_submenu.click()
+        dPage.yhh_erp_soft_nav.click()
+        dPage.yhh_erp_h3_icon.click()
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);") # js滚动条拉到最底端
+        dPage.yhh_erp_h3_new_buy_radio.click()
+        ran_str = ''.join(random.sample(string.ascii_letters,4))
+        dPage.yhh_erp_customer_name_input.send_keys(ran_str)
+        dPage.yhh_erp_customer_telephone_input.send_keys("18231045141")
+        dPage.yhh_erp_h3_buy_order_submit.click()
+        dPage.confirm_order_button.click()
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.pay_password_input.send_keys("123123")
+        dPage.confirm_pay_button.click()
+        dPage.accept_alert()
+        dPage.buy_sucess_dog_number_copy_button.click()
+        text = dPage.get_alert_text
+        dPage.dismiss_alert()
+        yhh_dogNo = text.split("：")[2].split(" ")[0]
+        yhh_code = text.split("：")[3]
+        dPage.get("http://192.168.9.50:8200/")
+        dPage.product_update_menu.click()
+        dPage.product_update_submenu.click()
+        dPage.update_dog_number_input.send_keys(yhh_dogNo)
+        dPage.update_dog_verification_code_input.send_keys(yhh_code)
+        dPage.is_cross_product_update_checkbox.click()
+        dPage.update_product_button.click()
+        time.sleep(3)
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.update_to_yhh_erp_h3_add_users_button.click()
+        dPage.update_order_submit.click()
+        dPage.execute_script("document.getElementById('UpdateConfirmForm').submit();")
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.pay_password_input.send_keys("123123")
+        dPage.confirm_pay_button.click()
+        dPage.accept_alert()
+        time.sleep(8)
+        dPage.dismiss_alert()
 
     def test_update_user_count_for_registered_hh(self,browser):
         """已注册辉煌ⅡTop升级用户数"""

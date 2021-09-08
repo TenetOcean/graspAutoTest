@@ -53,7 +53,7 @@ class DogOnlinePage(Page):
     update_to_hh_top_add_users_button = Element(css="#pills-tab297 > div.row > div:nth-child(1) > div >" + 
                                                 "button:nth-child(4)",describe="升级到辉煌ⅡTop增加用户数按钮")
     update_to_yhh_erp_h3_add_users_button = Element(css="#pills-tab365 > div.row > div:nth-child(1) > div >" + 
-                                                    "button:nth-child(3)",describe="升级到云辉煌ERP H3买断增加用户数按钮")
+                                                    "button:nth-child(4)",describe="升级到云辉煌ERP H3买断增加用户数按钮")
     update_order_submit = Element(css="#UpdateBuy",describe="升级确认提交")
     update_company_name_input = Element(css="#CompanyName",describe="升级客户公司名称输入框")
     update_industry_select = Element(css="#IndustryID_chzn",describe="升级所属行业下拉")
