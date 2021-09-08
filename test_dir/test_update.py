@@ -63,8 +63,8 @@ class TestUpdate:
         dPage.get("http://192.168.9.50:8200/")
         dPage.product_update_menu.click()
         dPage.product_update_submenu.click()
-        dPage.update_dog_number_input.send_keys(hh_dogNo)
-        dPage.update_dog_verification_code_input.send_keys(hh_code)
+        dPage.dog_number_input.send_keys(hh_dogNo)
+        dPage.dog_verification_code_input.send_keys(hh_code)
         dPage.is_cross_product_update_checkbox.click()
         dPage.update_product_button.click()
         time.sleep(3)
@@ -81,6 +81,8 @@ class TestUpdate:
 
     def test_update_user_conunt_for_yhh(self,browser):
         """未注册云辉煌ERP H3买断升级用户数"""
+        global yhh_dogNo
+        global yhh_code
         dPage = DogOnlinePage(browser)
         dPage.get("http://192.168.9.50:8200/")
         dPage.product_buy_menu.click()
@@ -106,8 +108,8 @@ class TestUpdate:
         dPage.get("http://192.168.9.50:8200/")
         dPage.product_update_menu.click()
         dPage.product_update_submenu.click()
-        dPage.update_dog_number_input.send_keys(yhh_dogNo)
-        dPage.update_dog_verification_code_input.send_keys(yhh_code)
+        dPage.dog_number_input.send_keys(yhh_dogNo)
+        dPage.dog_verification_code_input.send_keys(yhh_code)
         dPage.is_cross_product_update_checkbox.click()
         dPage.update_product_button.click()
         time.sleep(3)
@@ -173,8 +175,8 @@ class TestUpdate:
         dPage.get("http://192.168.9.50:8200/")
         dPage.product_update_menu.click()
         dPage.product_update_submenu.click()
-        dPage.update_dog_number_input.send_keys(hh_dogNo)
-        dPage.update_dog_verification_code_input.send_keys(hh_code)
+        dPage.dog_number_input.send_keys(hh_dogNo)
+        dPage.dog_verification_code_input.send_keys(hh_code)
         dPage.is_cross_product_update_checkbox.click()
         dPage.update_product_button.click()
         time.sleep(3)
@@ -220,6 +222,24 @@ class TestUpdate:
         dPage.pay_password_input.send_keys("123123")
         dPage.confirm_pay_button.click()
         dPage.accept_alert()
+
+    def test_yhh_renew(self,browser):
+        """云辉煌ERP H3买断续费"""
+        dPage = DogOnlinePage(browser)
+        dPage.get("http://192.168.9.50:8200/")
+        dPage.product_renew_menu.click()
+        dPage.product_renew_submenu.click()
+        dPage.dog_number_input.send_keys(yhh_dogNo)
+        dPage.dog_verification_code_input.send_keys(yhh_code)
+        dPage.renew_product_button.click()
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.submit_order_button.click()
+        dPage.execute_script("document.getElementById('UpdateConfirmForm').submit();")
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.pay_password_input.send_keys("123123")
+        dPage.confirm_pay_button.click()
+        dPage.accept_alert()
+        # dPage.refresh_element()
 
 
 if __name__ == "__main__":
