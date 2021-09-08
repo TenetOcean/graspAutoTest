@@ -43,16 +43,15 @@ class DogOnlinePage(Page):
                                           "button.btn.btn-success",describe="云辉煌ERP H3买断提交订单")
     submit_order_button = Element(css=".btn-primary",describe="提交订单按钮")
     buy_sucess_dog_number_copy_button = Element(xpath="//*[@id='modalId']/div[1]/div/div[2]/div/div[3]/div/input[1]",
-                                                describe="购买成功狗号验证码复制按钮")
+                                                timeout=20,describe="购买成功狗号验证码复制按钮")
     
     update_dog_number_input = Element(css="#DogNo",describe="升级狗号输入框")
     update_dog_verification_code_input = Element(css="#VerificaCode",describe="升级狗号验证码输入框")
     is_cross_product_update_checkbox = Element(css="#IsCrossProduct",describe="是否跨产品升级勾选框")
-    update_product_button = Element(css="#UpdateBuyForm > div:nth-child(4) > div > button.btn.btn-success",
-                                    describe="升级产品按钮")
+    update_product_button = Element(css=".btn-success",describe="升级产品按钮")
     update_to_yhh_erp_h3_icon = Element(css="#YHHERPH3MD_TY",describe="升级到云辉煌ERP H3买断图标")
     update_to_hh_top_add_users_button = Element(css="#pills-tab297 > div.row > div:nth-child(1) > div >" + 
-                                                "button:nth-child(3)",describe="升级到辉煌ⅡTop增加用户数按钮")
+                                                "button:nth-child(4)",describe="升级到辉煌ⅡTop增加用户数按钮")
     update_to_yhh_erp_h3_add_users_button = Element(css="#pills-tab365 > div.row > div:nth-child(1) > div >" + 
                                                     "button:nth-child(3)",describe="升级到云辉煌ERP H3买断增加用户数按钮")
     update_order_submit = Element(css="#UpdateBuy",describe="升级确认提交")
@@ -66,17 +65,17 @@ class DogOnlinePage(Page):
     update_mobile_number_input = Element(css="#MobileTel",describe="升级手机号码输入框")
     update_fixed_telephone_input = Element(css="#Tel",describe="升级固定电话1输入框")
     update_customer_email_input = Element(css="#Email",describe="升级客户邮箱输入框")
-    update_company_contact_radio = Element(xpath="//*[@id='dch']/div[1]/div/div/label[5]/input",
+    update_company_contact_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[14]/div/div/label[5]/input",
                                            describe="升级公司联系人单选按钮‘其他’")
-    update_channel_radio = Element(xpath="//*[@id='dch']/div[2]/div/div/label[6]/input",
+    update_channel_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[15]/div/div/label[6]/input",
                                    describe="升级知晓渠道单选按钮‘其他’")
-    update_is_website_radio = Element(xpath="//*[@id='dch']/div[3]/div/div/label[2]/input",
+    update_is_website_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[16]/div/div/label[2]/input",
                                       describe="升级有无网站单选按钮‘无’")
-    update_is_network_radio = Element(xpath="//*[@id='dch']/div[4]/div/div/label[2]/input",
+    update_is_network_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[17]/div/div/label[2]/input",
                                       describe="升级是否联网单选按钮‘无’")
-    update_is_exist_branch_radio = Element(xpath="//*[@id='dch']/div[5]/div/div/label[2]/input",
+    update_is_exist_branch_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[18]/div/div/label[2]/input",
                                            describe="升级是否有分支机构单选按钮‘否’")
-    update_computer_count_radio = Element(xpath="//*[@id='dch']/div[6]/div/div/label[5]/input",
+    update_computer_count_radio = Element(xpath="//*[@id='SubmitInfoForm']/div[19]/div/div/label[5]/input",
                                           describe="升级电脑数量单选按钮‘50台以上’")
     update_review_submit_button = Element(css="#ConfirmInfo",describe="升级审核提交按钮")
     wait_update_pay_button = Element(css="#sample_1 > tbody > tr:nth-child(1) > td:nth-child(12) >" + 
