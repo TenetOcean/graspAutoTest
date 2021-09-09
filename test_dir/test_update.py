@@ -1,6 +1,7 @@
 from os import cpu_count
 import sys
 from os.path import dirname, abspath
+
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 from page.pay_web_page import PayWebPage
 from page.dog_online_page import DogOnlinePage
@@ -30,12 +31,13 @@ class TestUpdate:
                 dPage.switch_to_window(handle)
 
     def customer_login(self,driver): # '''客户信息管理系统登录方法'''
-        dPage = CustomerPage(driver)
-        dPage.get("http://192.168.9.50:8300")
-        dPage.login_user_name_input.send_keys("admin")
-        dPage.login_password_input.send_keys("123123")
-        dPage.login_verification_code_input.send_keys("sdf3554kjs5d56afs55od54fj56o6565isg6577js")
-        dPage.login_button.click()
+        cPage = CustomerPage(driver)
+        cPage.get("http://192.168.9.50:8300")
+        cPage.login_user_name_input.clear()
+        cPage.login_user_name_input.send_keys("admin")
+        cPage.login_password_input.send_keys("123123")
+        cPage.login_verification_code_input.send_keys("sdf3554kjs5d56afs55od54fj56o6565isg6577js")
+        cPage.login_button.click()
 
     def test_update_user_count(self,browser,base_url):
         """未注册辉煌ⅡTop升级用户数"""
@@ -222,10 +224,13 @@ class TestUpdate:
         dPage.pay_password_input.send_keys("123123")
         dPage.confirm_pay_button.click()
         dPage.accept_alert()
+        time.sleep(45)
+        dPage.dismiss_alert()
 
     def test_yhh_renew(self,browser):
         """云辉煌ERP H3买断续费"""
         dPage = DogOnlinePage(browser)
+        dPage.get("http://192.168.9.50:8500")
         dPage.get("http://192.168.9.50:8200/")
         dPage.product_renew_menu.click()
         dPage.product_renew_submenu.click()
@@ -233,13 +238,86 @@ class TestUpdate:
         dPage.dog_verification_code_input.send_keys(yhh_code)
         dPage.renew_product_button.click()
         dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
-        dPage.submit_order_button.click()
+        dPage.renew_submit_order_button.click()
         dPage.execute_script("document.getElementById('UpdateConfirmForm').submit();")
         dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
         dPage.pay_password_input.send_keys("123123")
         dPage.confirm_pay_button.click()
         dPage.accept_alert()
-        # dPage.refresh_element()
+        dPage.sleep(1)
+        dPage.dismiss_alert()
+
+    def test_update_and_return(self,browser):
+        """软狗升级退货"""
+        rPage = RegisterPage(browser)
+        dPage = DogOnlinePage(browser)
+        rPage.get("http://192.168.9.50:8500")
+        rPage.register_dog_number_input.send_keys(yhh_dogNo)
+        rPage.register_dog_verification_code_input.send_keys(yhh_code)
+        rPage.submit_verification_button.click()
+        rPage.agent_name_input.send_keys("六六")
+        rPage.contact_input.send_keys("小华")
+        rPage.customer_email_input.send_keys("120624697@qq.com")
+        rPage.company_name_input.send_keys("任我逍遥任我行")
+        rPage.address_input.send_keys("软件园D")
+        rPage.industry_select.click()
+        rPage.industry_list_select_it.click()
+        rPage.province_select.click()
+        rPage.province_list_select_sichuan.click()
+        rPage.mobile_number_input.send_keys("18280331234")
+        rPage.fixed_telephone_input.send_keys("028803379")
+        rPage.company_contact_radio.click()
+        rPage.channel_radio.click()
+        rPage.is_website_radio.click()
+        rPage.is_network_radio.click()
+        rPage.is_exist_branch_radio.click()
+        rPage.computer_count_radio.click()
+        rPage.submit_register_button.click()
+        rPage.accept_alert()
+        dPage.get("http://192.168.9.50:8200/Home/Index")
+        dPage.dog_manage_menu.click()
+        dPage.dog_query_submenu.click()
+        dPage.search_input.send_keys(yhh_dogNo)
+        dPage.search_button.click()
+        dPage.submit_headquarters_review_button.click()
+        dPage.agent_review_pass_button.click()
+        dPage.accept_alert()
+        time.sleep(1)
+        dPage.accept_alert()
+        cPage = CustomerPage(browser)
+        cPage.get("http://192.168.9.50:8300/Role/Query")
+        cPage.register_review_menu.click()
+        cPage.wait_register_review_submenu.click()
+        cPage.search_input.send_keys(yhh_dogNo)
+        time.sleep(1)
+        cPage.wait_review_content_first_tr.click()
+        cPage.execute_script("window.scrollTo(0,450);")
+        cPage.review_pass_button.click()
+        cPage.review_popup_submit_button.click()
+        time.sleep(3)
+        dPage.get("http://192.168.9.50:8200/")
+        dPage.update_return_apply_menu.click()
+        dPage.update_return_apply_submenu.click()
+        dPage.return_dog_number_input.send_keys(hh_dogNo)
+        dPage.return_verification_code_input.send_keys(hh_code)
+        dPage.update_dog_number_input.send_keys(yhh_dogNo)
+        dPage.update_verification_code_input.send_keys(yhh_code)
+        dPage.return_dog_add_to_list.click()
+        dPage.update_dog_add_to_list.click()
+        dPage.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        dPage.update_return_confirm_submit_button.click()
+        dPage.accept_alert()
+        dPage.sleep(1)
+        dPage.accept_alert()
+        cPage.get("http://192.168.9.50:8300/UpdateReturnBill/AuditInfoList")
+        cPage.update_return_review_menu.click()
+        cPage.wait_update_return_review_submenu.click()
+        cPage.search_input.send_keys(hh_dogNo)
+        time.sleep(2)
+        cPage.update_return_review_button.click()
+        cPage.review_popup_submit_button.click()
+        
+        
 
 
 if __name__ == "__main__":
