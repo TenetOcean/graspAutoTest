@@ -52,7 +52,7 @@ class TestLoginSucess:
         time.sleep(1)
 
     def test_buy_success(self,browser,base_url):
-        '''随测'''
+        '''随测'''        
         self.hh_login(browser,base_url)
         page = DogOnlinePage(browser)
         page.get("http://192.168.9.50:8200/Home/Index")
@@ -63,9 +63,7 @@ class TestLoginSucess:
         page.window_scroll(0,"document.body.scrollHeight")
         page.hh_top_new_buy_radio.click() # 购买单选按钮‘新购’
         page.hh_top_buy_order_submit.click()
-        
-
-
+       
 
 if __name__ == '__main__':
     pytest.main(["-v", "./test_dir/test_login.py"])
