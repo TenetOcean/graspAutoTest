@@ -8,11 +8,12 @@ class DogOnlinePage(Page):
     product_update_menu = Element(css="#\\32 01",describe="产品升级菜单")
     product_renew_menu = Element(css="#\\32 11",describe="产品续费菜单")
     dog_manage_menu = Element(css="#\\33 21",describe="加密狗管理菜单")
-    soft_dog_buy_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
+    update_return_apply_menu = Element(css="#\\39 21",describe="升级退货申请菜单")
+    soft_dog_buy_submenu = Element(css="#sidebar > ul > li:nth-child(2) > ul > li:nth-child(1)",
                                    describe="软狗产品购买子菜单")
     hard_dog_buy_submenu = Element(css="#sidebar > ul > li:nth-child(2) > ul > li:nth-child(2)",
                                    describe="硬狗产品购买子菜单")
-    pruduct_material_buy_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(3)",
+    pruduct_material_buy_submenu = Element(css="#sidebar > ul > li:nth-child(2) > ul > li:nth-child(3)",
                                            describe="产品资料购买子菜单")
     product_update_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                      describe="产品升级子菜单")
@@ -21,6 +22,8 @@ class DogOnlinePage(Page):
     product_renew_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                     describe="产品续费子菜单")
     dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(5)>ul>li>a",describe="加密狗查询子菜单")
+    update_return_apply_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
+                                          describe="升级退货申请子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     yhh_erp_soft_nav = Element(css="#pills > ul > li:nth-child(5)",describe="管家婆云辉煌ERP软件导航")
     hh_top_soft_icon = Element(css="#pills-tab11101 >form > div.row > div:nth-child(1) > a",
@@ -83,6 +86,17 @@ class DogOnlinePage(Page):
     update_review_submit_button = Element(css="#ConfirmInfo",describe="升级审核提交按钮")
     wait_update_pay_button = Element(css="#sample_1 > tbody > tr:nth-child(1) > td:nth-child(12) >" + 
                                      "button.btn.btn-success",describe="升级中客户付款按钮")
+    
+    return_dog_number_input = Element(css="#ReturnDogNo",describe="退货狗号输入框")
+    return_verification_code_input = Element(css="#ReturnVerificaCode",describe="退货验证码输入框")
+    update_dog_number_input = Element(css="#DogNo",describe="升级狗号输入框")
+    update_verification_code_input = Element(css="#VerificaCode",describe="升级验证码输入框")
+    return_dog_add_to_list = Element(css="#FindResultForm > div:nth-child(1) > fieldset > div:nth-child(5) > button",
+                                     describe="退货狗添加到列表")
+    update_dog_add_to_list = Element(css="#FindResultForm > div:nth-child(6) > fieldset > div:nth-child(4) > button",
+                                     describe="升级狗添加到列表")
+    update_return_confirm_submit_button = Element(css="#FindResultForm > div:nth-child(13) > p > button",
+                                                  describe="升级退货确认提交按钮")
 
     search_input = Element(css=".form-control",describe="搜索输入框")
     search_button = Element(css=".col-md-5 > button",describe="搜索按钮")
@@ -94,7 +108,7 @@ class DogOnlinePage(Page):
     # customer_telephone_input = Element(css="#CustomerTel",describe="客户电话输入框")
 
     renew_product_button = Element(css=".btn-success",describe="续费产品按钮")
-    submit_order_button = Element(css="#UpdateBuy",describe="提交订单按钮")
+    renew_submit_order_button = Element(css="#UpdateBuy",describe="提交订单按钮")
     confirm_order_button = Element(css="#formsubmit",describe="确认订单按钮")
     hard_dog_confirm_order_button = Element(css="#formsubmits",describe="硬狗确认订单按钮")
     
