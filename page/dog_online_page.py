@@ -6,6 +6,7 @@ class DogOnlinePage(Page):
 
     product_buy_menu = Element(css="#\\31 01", describe="产品购买菜单")
     product_update_menu = Element(css="#\\32 01",describe="产品升级菜单")
+    product_renew_menu = Element(css="#\\32 11",describe="产品续费菜单")
     dog_manage_menu = Element(css="#\\33 21",describe="加密狗管理菜单")
     soft_dog_buy_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                    describe="软狗产品购买子菜单")
@@ -17,6 +18,8 @@ class DogOnlinePage(Page):
                                      describe="产品升级子菜单")
     wait_update_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(2)",
                                   describe="升级中客户子菜单")
+    product_renew_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
+                                    describe="产品续费子菜单")
     dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(5)>ul>li>a",describe="加密狗查询子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     yhh_erp_soft_nav = Element(css="#pills > ul > li:nth-child(5)",describe="管家婆云辉煌ERP软件导航")
@@ -45,8 +48,8 @@ class DogOnlinePage(Page):
     buy_sucess_dog_number_copy_button = Element(xpath="//*[@id='modalId']/div[1]/div/div[2]/div/div[3]/div/input[1]",
                                                 timeout=20,describe="购买成功狗号验证码复制按钮")
     
-    update_dog_number_input = Element(css="#DogNo",describe="升级狗号输入框")
-    update_dog_verification_code_input = Element(css="#VerificaCode",describe="升级狗号验证码输入框")
+    dog_number_input = Element(css="#DogNo",describe="升级狗号输入框")
+    dog_verification_code_input = Element(css="#VerificaCode",describe="升级狗号验证码输入框")
     is_cross_product_update_checkbox = Element(css="#IsCrossProduct",describe="是否跨产品升级勾选框")
     update_product_button = Element(css=".btn-success",describe="升级产品按钮")
     update_to_yhh_erp_h3_icon = Element(css="#YHHERPH3MD_TY",describe="升级到云辉煌ERP H3买断图标")
@@ -90,6 +93,8 @@ class DogOnlinePage(Page):
     # customer_name_input = Element(css="#CustomerName",describe="客户名称输入框")
     # customer_telephone_input = Element(css="#CustomerTel",describe="客户电话输入框")
 
+    renew_product_button = Element(css=".btn-success",describe="续费产品按钮")
+    submit_order_button = Element(css="#UpdateBuy",describe="提交订单按钮")
     confirm_order_button = Element(css="#formsubmit",describe="确认订单按钮")
     hard_dog_confirm_order_button = Element(css="#formsubmits",describe="硬狗确认订单按钮")
     
