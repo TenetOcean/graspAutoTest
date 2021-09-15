@@ -35,11 +35,11 @@ class TestLoginSucess:
         page.soft_dog_buy_submenu.click()
         page.hh_top_soft_nav.click()
         page.hh_top_soft_icon.click()
-        page.execute_script("window.scrollTo(0,document.body.scrollHeight);") # js滚动条拉到最底端
+        page.window_scroll(0,"document.body.scrollHeight") # js滚动条拉到最底端
         page.hh_top_new_buy_radio.click() # 购买单选按钮‘新购’
         page.hh_top_buy_order_submit.click()
         page.confirm_order_button.click()
-        page.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        page.window_scroll(0,"document.body.scrollHeight")
         page.pay_password_input.send_keys("123123")
         page.confirm_pay_button.click()
         page.accept_alert()
