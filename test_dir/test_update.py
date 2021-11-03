@@ -43,8 +43,9 @@ class TestUpdate:
         """未注册辉煌ⅡTop升级用户数"""
         global hh_dogNo
         global hh_code
-        self.hh_login(browser,base_url)
+        # self.hh_login(browser,base_url)
         dPage = DogOnlinePage(browser)
+        dPage.get("http://192.168.9.50:8200/Home/Index")
         dPage.product_buy_menu.click()
         dPage.soft_dog_buy_submenu.click()
         dPage.hh_top_soft_nav.click()

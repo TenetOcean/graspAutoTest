@@ -37,8 +37,9 @@ class TestRegister:
 
     def test_hh_top_register(self,browser,base_url):
         """辉煌Ⅱtop产品注册"""
-        self.hh_login(browser,base_url)
+        # self.hh_login(browser,base_url)
         page = DogOnlinePage(browser)
+        page.get("http://192.168.9.50:8200/Home/Index")
         page.product_buy_menu.click()
         page.soft_dog_buy_submenu.click()
         page.hh_top_soft_nav.click()
