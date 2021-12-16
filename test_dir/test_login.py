@@ -29,8 +29,9 @@ class TestLoginSucess:
     # @pytest.mark.xfail(raises=AssertionError) # 标记函数进行异常断言
     def test_buy(self,browser,base_url):
         """生成狗号验证码"""
-        self.hh_login(browser,base_url)
+        # self.hh_login(browser,base_url)
         page = DogOnlinePage(browser)
+        page.get("http://192.168.9.50:8200/Home/Index")
         page.product_buy_menu.click()
         page.soft_dog_buy_submenu.click()
         page.hh_top_soft_nav.click()
@@ -53,7 +54,7 @@ class TestLoginSucess:
 
     def test_buy_success(self,browser,base_url):
         '''随测'''        
-        self.hh_login(browser,base_url)
+        # self.hh_login(browser,base_url)
         page = DogOnlinePage(browser)
         page.get("http://192.168.9.50:8200/Home/Index")
         page.product_buy_menu.click()
