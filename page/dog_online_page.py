@@ -7,6 +7,7 @@ class DogOnlinePage(Page):
     product_buy_menu = Element(css="#\\31 01", describe="产品购买菜单")
     product_update_menu = Element(css="#\\32 01",describe="产品升级菜单")
     product_renew_menu = Element(css="#\\32 11",describe="产品续费菜单")
+    account_manage_menu = Element(css="#\\32 12",describe="账套管理菜单")
     dog_manage_menu = Element(css="#\\33 21",describe="加密狗管理菜单")
     update_return_apply_menu = Element(css="#\\39 21",describe="升级退货申请菜单")
     soft_dog_buy_submenu = Element(css="#sidebar > ul > li:nth-child(2) > ul > li:nth-child(1)",
@@ -21,15 +22,20 @@ class DogOnlinePage(Page):
                                   describe="升级中客户子菜单")
     product_renew_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                     describe="产品续费子菜单")
-    dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(5)>ul>li>a",describe="加密狗查询子菜单")
+    account_buy_submenu = Element(css="#sidebar > ul > li:nth-child(5) > ul > li:nth-child(1)",
+                                  describe="账套购买子菜单")
+    dog_query_submenu = Element(css="#sidebar>ul>li:nth-child(6)>ul>li>a",describe="加密狗查询子菜单")
     update_return_apply_submenu = Element(css="#sidebar > ul > li.sub-menu.open > ul > li:nth-child(1)",
                                           describe="升级退货申请子菜单")
     hh_top_soft_nav = Element(css="#pills > ul > li:nth-child(4)",describe="管家婆辉煌ⅡTOP软件导航")
     yhh_erp_soft_nav = Element(css="#pills > ul > li:nth-child(5)",describe="管家婆云辉煌ERP软件导航")
+    hh_erp_soft_nav = Element(css="#ulid > li:nth-child(3)",describe="管家婆辉煌ERP软件导航")
     hh_top_soft_icon = Element(css="#pills-tab11101 >form > div.row > div:nth-child(1) > a",
                                describe="辉煌ⅡTOP软件选择图标")
     yhh_erp_h3_icon = Element(css="#pills-tab11504 > form > div.row > div:nth-child(2) > a",
                               describe="云辉煌ERP H3买断选择图标")
+    hh_erp_h3_icon = Element(css="#pills-tab11301 > form > div.row > div:nth-child(1) > a",
+                              describe="辉煌ERP H3选择图标")
     hh_top_add_to_cart_button = Element(css="#BuyForm > div.row > div:nth-child(4) > div > button.btn.btn-danger",
                                         describe="辉煌ⅡTop单机版加入购物车按钮")
     hh_color_list_add_to_cart_button = Element(css="#BuyForm > div > div:nth-child(1) > div > button",
@@ -38,6 +44,8 @@ class DogOnlinePage(Page):
                                    "label:nth-child(1) > input",describe="辉煌ⅡTOP单选按钮'新购'")
     yhh_erp_h3_new_buy_radio = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(3) > div > div >" +
                                        "label:nth-child(1) > input",describe="云辉煌ERP H3买断单选按钮'新购'")
+    hh_erp_h3_new_buy_radio = Element(css="#pills-tab11301 > form > div.top-line > div:nth-child(3) > div > div >" +  
+                                      "label:nth-child(1) > input",describe="辉煌ERP H3单选按钮'新购'")
     yhh_erp_customer_name_input = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(10) > div >" + 
                                              "input",describe="云辉煌ERP H3买断客户名称输入框")
     yhh_erp_customer_telephone_input = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(11) >" +
@@ -47,6 +55,8 @@ class DogOnlinePage(Page):
                                       "button.btn.btn-success",describe="辉煌ⅡTOP提交订单")
     yhh_erp_h3_buy_order_submit = Element(css="#pills-tab11504 > form > div.top-line > div:nth-child(14) > div >" +
                                           "button.btn.btn-success",describe="云辉煌ERP H3买断提交订单")
+    hh_erp_h3_buy_order_submit = Element(css="#pills-tab11301 > form > div.top-line > div:nth-child(14) > div >" +  
+                                         "button.btn.btn-success",describe="辉煌ERP H3提交订单")
     submit_order_button = Element(css=".btn-primary",describe="提交订单按钮")
     buy_sucess_dog_number_copy_button = Element(xpath="//*[@id='modalId']/div[1]/div/div[2]/div/div[3]/div/input[1]",
                                                 timeout=20,describe="购买成功狗号验证码复制按钮")
@@ -112,5 +122,6 @@ class DogOnlinePage(Page):
     confirm_order_button = Element(css="#formsubmit",describe="确认订单按钮")
     hard_dog_confirm_order_button = Element(css="#formsubmits",describe="硬狗确认订单按钮")
     
+    success_button = Element(css=".btn-success",describe="确定按钮")
     pay_password_input = Element(css="#PassWord",describe="支付密码输入框")
     confirm_pay_button = Element(css="#ConfirmPay",describe="确认支付按钮")
